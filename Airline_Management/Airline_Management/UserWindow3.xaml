@@ -1,0 +1,166 @@
+﻿<Window
+    x:Class="Airline_Management.UserWindow3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Airline_Management"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="User Window"
+    Width="600"
+    Height="491"
+    Background="{x:Null}"
+    MouseLeftButtonDown="dragMe"
+    ResizeMode="NoResize"
+    Visibility="Visible"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        BorderBrush="Gray"
+        BorderThickness="0.3"
+        CornerRadius="10">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="#FFF1F7F7" />
+                <GradientStop Offset="0.317" Color="#FF3DC3F5" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,553,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFF5F52"
+                MouseLeftButtonDown="closeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Exit" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,533,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFFBE05"
+                MouseLeftButtonDown="minimizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Minimize" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,512,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FF15CC35"
+                MouseLeftButtonDown="resizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Maximize" />
+            <Button
+                x:Name="main_window"
+                Width="88"
+                Height="20"
+                Margin="-34,103,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="main_window_Click"
+                Content="Главное окно"
+                Cursor="Hand"
+                FontFamily="Franklin Gothic Demi"
+                RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90.392" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Label
+                Width="146"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Content="Окно запросов"
+                FontFamily="Tahoma"
+                FontSize="16"
+                FontWeight="Bold" />
+            <DataGrid
+                x:Name="search_data_grid"
+                Margin="37,111,38,28"
+                AlternatingRowBackground="#FF3DC3F5"
+                FontFamily="JetBrains Mono NL"
+                ItemsSource="{Binding}"
+                RenderTransformOrigin="0.487,0.522" />
+            <TextBox
+                x:Name="textbox1"
+                Width="102"
+                Margin="385,71,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text=""
+                TextWrapping="Wrap" />
+            <Button
+                x:Name="query"
+                Width="53"
+                Margin="492,71,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="query_Click"
+                Content="OK"
+                Cursor="Hand"
+                FontFamily="Franklin Gothic Demi" />
+            <Border
+                Margin="37,57,38,387"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="10,10,10,10"
+                Opacity="0.8"
+                Visibility="Visible" />
+            <ComboBox
+                x:Name="combobox"
+                Width="222"
+                Margin="49,71,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <ComboBoxItem
+                    Background="White"
+                    Content="Запрос стоимости билета"
+                    Foreground="DeepSkyBlue"
+                    IsSelected="True" />
+                <ComboBoxItem
+                    Background="DeepSkyBlue"
+                    Content="Запрос продолжительности полета"
+                    Foreground="White" />
+                <ComboBoxItem
+                    Background="White"
+                    Content="Запрос страны аэропортов"
+                    Foreground="DeepSkyBlue" />
+                <ComboBoxItem
+                    Background="DeepSkyBlue"
+                    Content="Запрос страны авиакомпании"
+                    Foreground="White" />
+                <ComboBoxItem
+                    Background="White"
+                    Content="Запрос количества мест"
+                    Foreground="DeepSkyBlue" />
+            </ComboBox>
+            <Label
+                Width="118"
+                Height="25"
+                Margin="276,68,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Введите значение"
+                FontFamily="Arial" />
+        </Grid>
+    </Border>
+</Window>
