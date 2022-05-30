@@ -22,7 +22,7 @@ namespace Airline_Management
     {
         string value = "";
         string connectionString = "SERVER=localhost;DATABASE=flight;UID=root;PASSWORD=1234;";
-       
+
         public UserWindow1()
         {
             InitializeComponent();
@@ -86,55 +86,41 @@ namespace Airline_Management
         private void find_Click(object sender, RoutedEventArgs e)
         {
             value = textbox1.Text;
-            
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-
             string selected = combobox.Text;
-            //MessageBox.Show(selected);
-
+            //MessageBox.Show(selected)
             if (selected == "ID")
-            {
-                int x = Int32.Parse(value);
+            {   int x = Int32.Parse(value);
                 if (value == null)
-                {
-                    MessageBox.Show("No Entry");
-                    Close();
-                }
+                {MessageBox.Show("No Entry");Close();}
                 MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE ID = {value}", connection);
                 DataTable table_display = new DataTable();
                 table_display.Load(cmd.ExecuteReader());
                 search_data_grid.DataContext = table_display;
                 connection.Close();
-                textbox1.Clear();
-            }
+                textbox1.Clear();}
             else if (selected == "Фамилия")
-            { 
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE Фамилия LIKE '{value}%'", connection);
+            {   MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE Фамилия LIKE '{value}%'", connection);
                 DataTable table_display = new DataTable();
                 table_display.Load(cmd.ExecuteReader());
                 search_data_grid.DataContext = table_display;
                 connection.Close();
-                textbox1.Clear();
-            }
+                textbox1.Clear();}
             else if (selected == "Имя")
-            {
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE Имя LIKE '{value}%'", connection);
+            {   MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE Имя LIKE '{value}%'", connection);
                 DataTable table_display = new DataTable();
                 table_display.Load(cmd.ExecuteReader());
                 search_data_grid.DataContext = table_display;
                 connection.Close();
-                textbox1.Clear();
-            }
+                textbox1.Clear();}
             else if (selected == "Номер паспорта")
-            {
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE `Номер паспорта` LIKE '{value}%'", connection);
+            {   MySqlCommand cmd = new MySqlCommand($"SELECT * FROM manifest WHERE `Номер паспорта` LIKE '{value}%'", connection);
                 DataTable table_display = new DataTable();
                 table_display.Load(cmd.ExecuteReader());
                 search_data_grid.DataContext = table_display;
                 connection.Close();
-                textbox1.Clear();
-            }
+                textbox1.Clear();}
 
         }
     }

@@ -27,12 +27,14 @@ namespace Airline_Management
         string telephone = "";
         string address = "";
         string passport_number = "";
+        string query = "";
         string connectionString = "SERVER=localhost;DATABASE=flight;UID=root;PASSWORD=1234;";
 
         public MainWindow()
         {
             InitializeComponent();
             MySqlConnection connection = new MySqlConnection(connectionString);
+           
         }
 
         private void passengers_button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +42,8 @@ namespace Airline_Management
 
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand("select * from manifest", connection);
+            query = "select * from manifest";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
             DataTable table_display = new DataTable();
             table_display.Load(cmd.ExecuteReader());
             gen_Display.DataContext = table_display;
@@ -126,42 +129,22 @@ namespace Airline_Management
             {
 
             }
-        }
+        } 
 
         private void closeApp(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                Close();
-            }
+        {   try{Close();}
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            {MessageBox.Show(ex.Message);}
         }
-
         private void minimizeApp(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                this.WindowState = WindowState.Minimized;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        {   try{ this.WindowState = WindowState.Minimized;
+            }catch (Exception ex)
+            {MessageBox.Show(ex.Message);}
         }
-
         private void resizeApp(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                this.WindowState = WindowState.Normal;
-            }
+        {   try{ this.WindowState = WindowState.Normal;}
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            {MessageBox.Show(ex.Message);}
         }
 
         private void add_row_Click(object sender, RoutedEventArgs e)
@@ -174,11 +157,12 @@ namespace Airline_Management
             address = textbox5.Text;
             passport_number = textbox6.Text;
 
-            int x = Int32.Parse(ID_input);
+            int x = Int32.Parse(ID);
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand($"INSERT INTO manifest (`ID`,`Фамилия`, `Имя`, `Отчество`, `Телефон`, `Место жительства`, `Номер паспорта`) " +
-                $"VALUES ({ID},{surname}, {first_name}, {middle_name},{telephone}, {address}, {passport_number})", connection);
+            MySqlCommand cmd = new MySqlCommand($"INSERT INTO manifest (`Фамилия`, `Имя`," +
+                $" `Отчество`, `Телефон`, `Место жительства`, `Номер паспорта`) " +
+                $"VALUES ({@surname}, {@first_name}, {@middle_name},{@telephone}, {@address}, {@passport_number})", connection);
             DataTable table_display = new DataTable();
             table_display.Load(cmd.ExecuteReader());
             gen_Display.DataContext = table_display;
@@ -250,5 +234,11 @@ namespace Airline_Management
             Close();
         }
 
+        private void start_page_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage subWindow = new StartPage();
+            subWindow.Show();
+            Close();
+        }
     }
 }

@@ -1,0 +1,121 @@
+﻿<Window
+    x:Class="Airline_Management.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Airline_Management"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Start Page"
+    Width="600"
+    Height="429"
+    Background="{x:Null}"
+    MouseLeftButtonDown="dragMe"
+    ResizeMode="NoResize"
+    Visibility="Visible"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        BorderBrush="Gray"
+        BorderThickness="0.3"
+        CornerRadius="10">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="#FFF1F7F7" />
+                <GradientStop Offset="0.317" Color="#FF3DC3F5" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,553,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFF5F52"
+                MouseLeftButtonDown="closeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Exit" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,533,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFFBE05"
+                MouseLeftButtonDown="minimizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Minimize" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,512,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FF15CC35"
+                MouseLeftButtonDown="resizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Maximize" />
+            <Button
+                x:Name="main_window"
+                Width="197"
+                Height="55"
+                Margin="53,73,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="main_window_Click"
+                Content="Администратор"
+                Cursor="Hand"
+                FontFamily="Cambria Math"
+                FontSize="16"
+                FontWeight="Bold"
+                RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-0.611" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button
+                x:Name="passenger_window"
+                Width="198"
+                Height="56"
+                Margin="320,73,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="passenger_window_Click"
+                Content="Пассажир"
+                Cursor="Hand"
+                FontFamily="Cambria Math"
+                FontSize="16"
+                FontWeight="Bold"
+                RenderTransformOrigin="0.496,0.529" />
+            <Image
+                Margin="9,157,14,14"
+                Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\plane2.png"
+                Stretch="Fill" />
+            <Label
+                Width="226"
+                Height="98"
+                Margin="59,242,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="База Данных&#xD;&#xA;   Перевозки"
+                FontFamily="Constantia"
+                FontSize="24"
+                FontWeight="Bold" />
+
+        </Grid>
+    </Border>
+</Window>

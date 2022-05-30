@@ -25,7 +25,7 @@
                 <GradientStop Offset="0.317" Color="#FF3DC3F5" />
             </LinearGradientBrush>
         </Border.Background>
-        <Grid Margin="0,0,0,34">
+        <Grid>
             <Ellipse
                 Grid.Row="0"
                 Width="15"
@@ -65,7 +65,7 @@
 
             <DataGrid
                 Name="gen_Display"
-                Margin="26,61,219,2"
+                Margin="26,61,219,39"
                 AlternatingRowBackground="#FF3DC3F5"
                 FontFamily="JetBrains Mono NL"
                 ItemsSource="{Binding}"
@@ -167,7 +167,7 @@
                 Margin="295,3,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="База Данных Перевозки"
+                Content="Администратор"
                 FontFamily="Tahoma"
                 FontSize="16"
                 FontWeight="Bold" />
@@ -263,7 +263,7 @@
                 Content="Номер паспорта"
                 FontFamily="Arial" />
             <Border
-                Margin="590,18,19,186"
+                Margin="590,18,19,220"
                 BorderBrush="LightGray"
                 BorderThickness="1"
                 CornerRadius="10,10,10,10"
@@ -333,14 +333,14 @@
                 Cursor="Hand"
                 FontFamily="Franklin Gothic Demi" />
             <Border
-                Margin="592,282,17,92"
+                Margin="592,282,17,128"
                 BorderBrush="LightGray"
                 BorderThickness="1"
                 CornerRadius="10,10,10,10"
                 Opacity="0.8"
                 Visibility="Visible" />
             <Border
-                Margin="595,379,14,0"
+                Margin="595,379,14,28"
                 BorderBrush="LightGray"
                 BorderThickness="1"
                 CornerRadius="10,10,10,10"
@@ -464,6 +464,28 @@
                         <ScaleTransform />
                         <SkewTransform />
                         <RotateTransform Angle="90.392" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button
+                x:Name="start_page"
+                Width="92"
+                Height="23"
+                Margin="42,455,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="start_page_Click"
+                Content="Start Page"
+                Cursor="Hand"
+                FontFamily="Franklin Gothic Demi"
+                RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-0.427" />
                         <TranslateTransform />
                     </TransformGroup>
                 </Button.RenderTransform>

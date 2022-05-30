@@ -1,0 +1,369 @@
+﻿<Window
+    x:Class="Airline_Management.PassengerTicket"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Airline_Management"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Start Page"
+    Width="600"
+    Height="429"
+    Background="{x:Null}"
+    MouseLeftButtonDown="dragMe"
+    ResizeMode="NoResize"
+    Visibility="Visible"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        BorderBrush="Gray"
+        BorderThickness="0.3"
+        CornerRadius="10">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="#FFF1F7F7" />
+                <GradientStop Offset="0.317" Color="#FF3DC3F5" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid Width="590" HorizontalAlignment="Left">
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,553,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFF5F52"
+                MouseLeftButtonDown="closeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Exit" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,533,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FFFFBE05"
+                MouseLeftButtonDown="minimizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Minimize" />
+            <Ellipse
+                Grid.Row="0"
+                Width="15"
+                Height="15"
+                Margin="0,10,512,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Fill="#FF15CC35"
+                MouseLeftButtonDown="resizeApp"
+                RenderTransformOrigin="0.509,0.469"
+                ToolTip="Maximize" />
+            <Button
+                x:Name="start_page"
+                Width="92"
+                Height="23"
+                Margin="27,383,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="start_page_Click"
+                Content="Start Page"
+                Cursor="Hand"
+                FontFamily="Franklin Gothic Demi"
+                RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-0.427" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Label
+                Width="120"
+                Margin="20,66,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Номер паспорта"
+                FontFamily="Arial" />
+            <TextBox
+                x:Name="textbox"
+                Width="158"
+                Margin="130,67,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text=""
+                TextWrapping="Wrap" />
+            <Button
+                x:Name="order_ticket"
+                Width="158"
+                Margin="388,65,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFE6EDFF"
+                Click="order_ticket_Click"
+                Content="Просмотр билет"
+                Cursor="Hand"
+                FontFamily="Franklin Gothic Demi" />
+            <Label
+                Width="84"
+                Height="37"
+                Margin="270,13,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Билет"
+                FontFamily="Tahoma"
+                FontSize="16"
+                FontWeight="Bold" />
+            <Border
+                Width="394"
+                Height="188"
+                Margin="30,157,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFD4EFFF"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="15,15,15,15">
+                <Image
+                    Margin="15,13,-17,9"
+                    Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\earth bg1.png"
+                    Stretch="Fill" />
+            </Border>
+            <Border
+                Width="147"
+                Height="188"
+                Margin="424,157,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FFF93D3D"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="15,15,15,15">
+                <Image
+                    Margin="13,-1,13,138"
+                    Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\white bar code.png"
+                    Stretch="Fill" />
+            </Border>
+            <Image
+                Margin="-24,212,434,140"
+                RenderTransformOrigin="0.5,0.5"
+                Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\bar code.png"
+                Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90.305" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Label
+                Width="120"
+                Margin="110,166,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Имя пассажира"
+                FontFamily="Arial" />
+            <Label
+                Width="64"
+                Margin="234,166,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="ID рейса"
+                FontFamily="Arial" />
+            <Label
+                Width="85"
+                Margin="312,166,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Дата вылета"
+                FontFamily="Arial" />
+            <Label
+                Width="120"
+                Margin="180,286,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Ворота отбытия"
+                FontFamily="Arial" />
+            <Label
+                Width="120"
+                Margin="440,206,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Имя пассажира"
+                FontFamily="Arial" />
+            <Label
+                Width="64"
+                Margin="440,246,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="ID рейса"
+                FontFamily="Arial" />
+            <Label
+                Width="85"
+                Margin="440,286,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Дата вылета"
+                FontFamily="Arial" />
+            <Label
+                x:Name="black_name"
+                Width="130"
+                Margin="100,191,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontWeight="Bold" />
+            <Label
+                x:Name="black_flight"
+                Width="72"
+                Margin="250,191,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontWeight="Bold" />
+            <Label
+                x:Name="black_date"
+                Width="63"
+                Margin="323,191,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontWeight="Bold" />
+            <Label
+                Width="120"
+                Margin="178,301,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontFamily="Arial"
+                FontWeight="Bold" />
+            <Label
+                x:Name="black_gate"
+                Width="120"
+                Margin="225,301,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontWeight="Bold" />
+            <Label
+                x:Name="black_from"
+                Width="120"
+                Margin="118,231,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="20"
+                FontWeight="Bold" />
+            <Label
+                x:Name="black_to"
+                Width="120"
+                Margin="298,231,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="20"
+                FontWeight="Bold" />
+            <Label
+                x:Name="white_name"
+                Width="120"
+                Margin="435,221,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="10"
+                FontWeight="Bold"
+                Foreground="White" />
+            <Label
+                x:Name="white_flight"
+                Width="120"
+                Margin="459,261,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="10"
+                FontWeight="Bold"
+                Foreground="White" />
+            <Label
+                x:Name="white_date"
+                Width="53"
+                Margin="454,301,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="10"
+                FontWeight="Bold"
+                Foreground="White" />
+            <Label
+                x:Name="white_from"
+                Width="74"
+                Margin="520,291,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="14"
+                FontWeight="Bold"
+                Foreground="White"
+                RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-90.517" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label
+                x:Name="white_to"
+                Width="87"
+                Margin="513,195,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content=""
+                FontFamily="Arial"
+                FontSize="14"
+                FontWeight="Bold"
+                Foreground="White"
+                RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="-90.517" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Image Margin="547,251,20,154" Stretch="Fill" Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\white_icon.png"/>
+            <Image Margin="229,221,303,146" Stretch="Fill" Source="C:\Users\USER\source\repos\Airline_Management\Airline_Management\black_icon.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="44.4"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+        </Grid>
+    </Border>
+</Window>

@@ -4,11 +4,21 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
-    <ApplicationDefinition Update="App.xaml">
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Update="Login_page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PassengerBooking.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PassengerTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PassengerWindow1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StartPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindow1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,7 +33,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Login_page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PassengerBooking.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PassengerTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PassengerWindow1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StartPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindow1.xaml">
